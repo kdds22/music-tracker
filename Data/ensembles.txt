@@ -1,0 +1,13 @@
+solo
+duet
+trio
+quartet
+quintet
+sextet
+septet
+octet
+nonet
+decet
+duodecet
+choir
+orchestra

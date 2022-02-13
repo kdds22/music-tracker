@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Welcome to RD Music Recommender {% endblock %}</h1>
+<h6>Search in approximately {{ time }} seconds</h6>
+<br/>
+
+<!--
+{'artist': rec['artist'],
+'title': rec['title'],
+'similarity': "{0:.0f}%".format(rec['similarity']*100),
+'popularity': rec['popularity'],
+'lastfm_url': rec['lastfm_url'],
+'spotify_url': rec['spotify_url']}
+-->
+{% for r in (rec) %}
+<div align="left">
+    <span class="badge badge-primary">{{ rec[r]['similarity'] }}</span>
+    <a href="{{ rec[r]['spotify_url'] }}" target="_blank">
+        <strong>{{ rec[r]['artist'] }} -> {{ rec[r]['title'] }}:</strong>
+    </a>
+    <hr>
+</div>
+{% endfor %}
+
+
+{% endblock %}

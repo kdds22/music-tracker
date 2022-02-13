@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Welcome to RD Music Recommender {% endblock %}</h1>
+<form method="post" action="{{url_for('search')}}">
+    <br/>
+    <div class="form-group">
+        <label for="inputMusicName">Music's Name</label>
+        <input type="text" class="form-control col-lg-4" id="inputMusicName" placeholder="Dream in Colour"
+               name="titleMusic" required="required">
+        <small id="inputMusicNameHelp" class="form-text text-muted">Tips: Cold Heart, Beggin, Leave The Door Open, Bad
+            Habits...</small>
+    </div>
+    <div class="form-group">
+        <label for="inputArtistName">Artist's Name</label>
+        <input name="artistMusic" type="text" class="form-control col-lg-4" id="inputArtistName" placeholder="Franc Moody"
+        >{{ request.form['artist'] }}</input>
+    </div>
+    <div class="form-group">
+        <label for="totalDaBusca">Number of Recommendations</label>
+        <select class="form-control col-lg-4" id="totalDaBusca" name="limit_select">
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search...</button>
+</form>
+{% endblock %}
